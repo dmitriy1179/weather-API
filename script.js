@@ -1,5 +1,5 @@
 const city = "Kharkov";
-const key = "837caf925275d1fe081a80b115d9ca72";
+const key = "ccb712103b1bac33d5e81824ae76a565";
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=uk`;
 
 getWeather().then(showWeather);
@@ -25,26 +25,26 @@ async function getWeather() {
 
 function showWeather({ icon, description, humidity, pressure, temp, speed }) {
   document.body.innerHTML = `
-    <div>
+    <div class="container">
       <div class="description">
-        <img class="temp-img" src="https://openweathermap.org/img/wn/${icon}.png" style="filter:drop-shadow(0 0 2px black)" alt=${description}>
-        <p class="temperature">${Math.round(
-    temp
-  )}<span>&deg;</span></p>
-        <p class="weather">${description}</p>
+          <div class="img-weather">
+            <img class="temp-img" src="https://openweathermap.org/img/wn/${icon}.png" style="filter:drop-shadow(0 0 2px black)" alt=${description}>
+            <p class="weather">${description}</p>
+          </div>  
+        <p class="temperature">${Math.round(temp)}<span>&deg;</span></p>
       </div>
       <ul class="grid">
         <li class="grid-name">
+          <p class="value-name">Вологість</p>
           <p class="value">${humidity}<span>%</span></p>
-          <p class="value-name">Humidity</p>
         </li>
         <li class="grid-name">
-          <p class="value">${pressure}<span>h/Pa</span></p>
-          <p class="value-name">Pressure</p>
+          <p class="value-name">Тиск</p>
+          <p class="value">${pressure}<span>мм</span></p>
         </li>
         <li class="grid-name">
+          <p class="value-name">Вітер</p>
           <p class="value">${speed}<span>km/h</span></p>
-          <p class="value-name">Wind Speed</p>
         </li>
       </ul>
     </div>

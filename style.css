@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", Helvetica, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 3px -3px 15px rgb(204, 202, 202);
+  height: max-content;
+
+  .description {
+    display: flex;
+    gap: 5px;
+
+    .img-weather {
+      display: grid;
+      justify-items: center;
+
+      .temp-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .weather {
+        font-size: 24px;
+        margin-top: -25px;
+      }
+    }
+
+    .temperature {
+      font-size: 80px;
+      align-self: center;
+    }
+  }
+
+  .grid {
+    display: grid;
+    align-items: center;
+    font-size: 12px;
+    grid-auto-rows: max-content;
+    gap: 5px;
+
+    .grid-name {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+  }
+}
