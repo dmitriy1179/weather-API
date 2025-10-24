@@ -25,6 +25,7 @@ async function getWeather() {
 
 function showWeather({ icon, description, humidity, pressure, temp, speed }) {
   document.body.innerHTML = `
+    <h2>Today's weather forecast for Kharkiv</h2>
     <div class="container">
       <div class="description">
           <div class="img-weather">
